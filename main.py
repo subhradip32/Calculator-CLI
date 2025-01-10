@@ -1,6 +1,5 @@
 import  os 
-import time 
-import math
+
 
 class Calculator:
     '''
@@ -33,6 +32,9 @@ class Calculator:
 
 # Handle CLI
 class CLI:
+    '''
+    This class will help us to generate and manage the usage of the frontend CLI of the calculator application.
+    '''
     def __init__(self):
         self.clear_screen()
         self.counter = 21
@@ -45,7 +47,7 @@ class CLI:
     def clear_screen(self):
         os.system("cls")
     
-    def is_integer(self,s: str):
+    def is_float(self,s: str):
         try:
             float(s)
             return True
@@ -53,7 +55,7 @@ class CLI:
             return False
 
     def addExpressionToDisplay(self, inp: str):
-        if self.is_integer(inp):
+        if self.is_float(inp):
             self.numbers.append(float(inp))
         else:
             self.operations.append(inp)
